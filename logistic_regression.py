@@ -115,12 +115,12 @@ if __name__ == '__main__':
     min_max = get_max_and_min(test)
     test = normalize_data(test, min_max)
     test = np.insert(test, 0, 1, axis=1)
-    with open('test_alam.csv', mode='w') as submission_test:
-        res_w = csv.writer(submission_test, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        res_w.writerow(['PassengerId', 'Survived'])
+    with open('res_alam.csv', 'w') as res_file:
+        res_file.write("PassengerId,Survived\n")
         for i in range(len(test)):
             prediction = hypothesis(thetas, test[i])
             if (prediction > 0.5):
-                res_w.writerow([int(test_1[i][0]), '1'])
+                res_file.write(str(int(test_1[i][0])) + ",1\n")
             else:
-                res_w.writerow([int(test_1[i][0]), '0'])
+                res_file.write(str(int(test_1[i][0])) + ",0\n")
+    print("Finished")
