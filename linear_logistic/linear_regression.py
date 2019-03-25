@@ -54,19 +54,6 @@ def step_gradient_descent(data, thetas, learning_rate):
         temp_thetas[j] = thetas[j] - (learning_rate*(1/N)) * acum
     return temp_thetas
 
-
-def gradient_descent(dataset, alfa, coefficients, y):
-	newCoef = list(coefficients)
-	for i in range(len(coefficients)):
-		sum = 0
-		for j in range(len(dataset)):
-			prediction = hypothesis(dataset[j], coefficients)
-			sum = sum + (prediction - y[j]) * dataset[j][i]
-		# Update
-		newCoef[i] = coefficients[i] - alfa * (1 / len(dataset)) * sum
-		#print(newParams)
-	return newCoef
-
 if __name__ == '__main__':
     """
         This script implements linear regression with gradient descent
