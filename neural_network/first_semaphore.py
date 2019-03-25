@@ -35,3 +35,17 @@ for iteration in range(60):
   if iteration % 9 == 0:
 
     print("Iter: ", iteration, "Error: ", layer_2_error)
+
+option = input("Enter \'s\' to exit or anything else to continue: ")
+while(option != 's'):
+
+  
+  inp = []
+  for light in range(1,4):
+    inp.append(int(input(f'Introduce light {light}: ')))
+  
+  inpnp = np.array(inp)
+  layer_1 = relu(np.dot(inpnp, weights_0_1))
+  layer_2 = np.dot(layer_1, weights_1_2)
+  print(layer_2)
+  option = input("Enter \'s\' to exit or anything else to continue: ")
