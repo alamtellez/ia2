@@ -83,7 +83,7 @@ if __name__ == '__main__':
         x_s = np.linspace(min(data[:, 1]), max(data[:, 1]))
         y_s = (thetas[1] * x_s) + thetas[0]
         plt.plot(x_s, y_s)
-        plt.ylabel('some numbers')
+        plt.ylabel('Y')
         plt.show()
 
     # If dataset is 3d, do other things to plot
